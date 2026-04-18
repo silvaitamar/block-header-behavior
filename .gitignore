@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# Build / deps (if you add tooling later)
+node_modules/
+vendor/
+*.zip
+
+# Local tooling
+.phpcs-cache
+phpunit.xml
+
+# Compiled translations (optional: commit .po/.mo if you ship languages)
+# *.mo
+# *.po

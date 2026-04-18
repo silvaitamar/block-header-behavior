@@ -1,0 +1,55 @@
+/**
+ * Block Header Behavior — frontend styles.
+ *
+ * @package
+ */
+
+/* Gives overlay headers a predictable containing block in block themes. */
+.wp-site-blocks {
+	position: relative;
+}
+
+/* Sticky: stays at top while scrolling. */
+.site-header.header--sticky,
+header.site-header.header--sticky {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	background: var(--bhb-header-scrolled-bg, transparent);
+	box-shadow: var(--bhb-header-scrolled-shadow, none);
+}
+
+/*
+ * Overlay: cabeçalho sobre o hero.
+ * Usamos sempre `position: fixed` (não alternar absolute → sticky ao rolar): essa troca
+ * reflowava o layout e gerava a "piscada" com o fundo opaco antes do conteúdo estabilizar.
+ * Com fixed, só fundo e sombra mudam quando .is-scrolled é aplicado.
+ */
+.site-header.header--overlay,
+header.site-header.header--overlay {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 100;
+	width: 100%;
+	background: transparent;
+	transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Após scroll: mesmo posicionamento; apenas fundo e sombra (variáveis do editor). */
+.site-header.header--overlay.is-scrolled,
+header.site-header.header--overlay.is-scrolled {
+	background: var(--bhb-header-scrolled-bg, #ffffff);
+	box-shadow: var(--bhb-header-scrolled-shadow, 0 1px 0 rgba(0, 0, 0, 0.06));
+}
+
+/* Respect reduced motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+	.site-header.header--overlay,
+	header.site-header.header--overlay {
+		transition: none;
+	}
+}
+
