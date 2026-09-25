@@ -33,8 +33,27 @@ final class Assets {
 	public function register_hooks() {
 		add_action( 'init', array( $this, 'register_frontend_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'maybe_enqueue_frontend' ), 20 );
+		// Site Editor canvas: overlay CSS + scroll script → .is-scrolled.
+		add_action( 'enqueue_block_assets', array( $this, 'enqueue_block_canvas_assets' ) );
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_editor' ) );
+	}
+
+	/**
+	 * Overlay header styles + scroll script inside the editor canvas iframe.
+	 * Frontend still uses maybe_enqueue_frontend() (conditional).
+	 *
+	 * @return void
+	 */
+	public function enqueue_block_canvas_assets() {
+		if ( ! is_admin() ) {
+			return;
+		}
+		if ( ! wp_style_is( 'bhb-block-header-behavior', 'registered' ) ) {
+			return;
+		}
+		wp_enqueue_style( 'bhb-block-header-behavior' );
+		wp_enqueue_script( 'bhb-block-header-behavior' );
 	}
 
 	/**
