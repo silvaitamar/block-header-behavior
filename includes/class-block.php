@@ -238,7 +238,7 @@ final class Block {
 			/* translators: Block variation description. */
 			'description' => __( 'Semantic header group with optional sticky or overlay behavior.', 'block-header-behavior' ),
 			'attributes'  => array(
-				'tagName'                  => 'div',
+				'tagName'                  => 'header',
 				'className'                => 'site-header',
 				'headerMode'               => 'default',
 				'headerScrolledBackground' => '',

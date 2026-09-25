@@ -21,8 +21,8 @@ Plugin WordPress que adiciona uma **variação de bloco** ao `core/group` ("Site
 3. No painel do bloco, defina o **modo do cabeçalho**:
    - **Default** — fluxo normal.
    - **Sticky** — fixa no topo ao rolar (`position: sticky`).
-   - **Overlay** — sobrepõe o conteúdo inicialmente; ao rolar, fundo/sombra configuráveis (via variáveis CSS e classe `is-scrolled`).
-4. Nos modos sticky/overlay, use os controles nativos de **Cor** ("Fundo ao fixar") e **Borda** ("Sombra ao fixar") quando disponíveis.
+   - **Overlay** — sobrepõe o conteúdo inicialmente; ao rolar, aplica fundo/sombra **somente se** você configurar no inspetor (variáveis CSS + classe `is-scrolled`). Sem sombra definida, o default é `box-shadow: none` — use isso quando o tema já tem `border-bottom` e você não quer borda dupla.
+4. Nos modos sticky/overlay, use os controles nativos de **Cor** ("Fundo ao fixar") e **Borda** ("Sombra ao fixar") quando disponíveis. Deixe a sombra vazia se a borda inferior do tema for suficiente.
 
 O CSS/JS de front-end **só são enfileirados** se o conteúdo analisado contiver um `core/group` com `site-header` na classe (singular, templates e partes em temas de blocos).
 

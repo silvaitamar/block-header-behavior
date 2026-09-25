@@ -38,11 +38,13 @@ header.site-header.header--overlay {
 	transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Após scroll: mesmo posicionamento; apenas fundo e sombra (variáveis do editor). */
+/* Após scroll: mesmo posicionamento; fundo e sombra só se o tema definir as vars.
+ * Default da sombra = none (não forçar hairline): temas com border-bottom próprio
+ * (ex. outline 1px) duplicavam a borda com o antigo fallback 0 1px 0 …. */
 .site-header.header--overlay.is-scrolled,
 header.site-header.header--overlay.is-scrolled {
 	background: var(--bhb-header-scrolled-bg, #ffffff);
-	box-shadow: var(--bhb-header-scrolled-shadow, 0 1px 0 rgba(0, 0, 0, 0.06));
+	box-shadow: var(--bhb-header-scrolled-shadow, none);
 }
 
 /* Respect reduced motion preferences. */

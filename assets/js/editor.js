@@ -61,7 +61,11 @@
 	 * @return {boolean}
 	 */
 	function isSiteHeaderAttributes( attributes ) {
+		const tag = ( attributes && attributes.tagName ) || 'div';
 		const cls = ( attributes && attributes.className ) || '';
+		if ( tag !== 'header' ) {
+			return false;
+		}
 		return (
 			cls
 				.split( /\s+/ )
@@ -95,7 +99,7 @@
 				'block-header-behavior'
 			),
 			attributes: {
-				tagName: 'div',
+				tagName: 'header',
 				className: 'site-header',
 				headerMode: 'default',
 				headerScrolledBackground: '',

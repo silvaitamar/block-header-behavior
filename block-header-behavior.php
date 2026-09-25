@@ -3,7 +3,7 @@
  * Plugin Name:       Block Header Behavior
  * Plugin URI:        https://github.com/silvaitamar/block-header-behavior
  * Description:       Extends the block editor with configurable site header behaviors (default, sticky, overlay) via a core/group variation.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Itamar Silva
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Plugin version (keep in sync with the Version header above).
  */
-define( 'BHB_VERSION', '1.0.0' );
+define( 'BHB_VERSION', '1.0.1' );
 
 define( 'BHB_PLUGIN_FILE', __FILE__ );
 define( 'BHB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
