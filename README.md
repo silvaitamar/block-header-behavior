@@ -24,6 +24,8 @@ Plugin WordPress que adiciona uma **variação de bloco** ao `core/group` ("Site
    - **Overlay** — sobrepõe o conteúdo inicialmente; ao rolar, aplica fundo/sombra **somente se** você configurar no inspetor (variáveis CSS + classe `is-scrolled`). Sem sombra definida, o default é `box-shadow: none` — use isso quando o tema já tem `border-bottom` e você não quer borda dupla.
 4. Nos modos sticky/overlay, use os controles nativos de **Cor** ("Fundo ao fixar") e **Borda** ("Sombra ao fixar") quando disponíveis. Deixe a sombra vazia se a borda inferior do tema for suficiente.
 
+**Mobile / breakpoints:** o modo Overlay usa `position: fixed` em todos os viewports. Não há breakpoint embutido no plugin (decisão de produto). Temas que queiram header no fluxo só no mobile devem sobrescrever o CSS do handle `bhb-block-header-behavior` (ex. `position: relative` + zerar o `padding-top` de compensação do tema) — o tema **iawp** faz isso em ≤799px.
+
 O CSS/JS de front-end **só são enfileirados** se o conteúdo analisado contiver um `core/group` com `site-header` na classe (singular, templates e partes em temas de blocos).
 
 ## Hooks (desenvolvedores)

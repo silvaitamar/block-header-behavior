@@ -25,6 +25,10 @@ header.site-header.header--sticky {
  * Usamos sempre `position: fixed` (não alternar absolute → sticky ao rolar): essa troca
  * reflowava o layout e gerava a "piscada" com o fundo opaco antes do conteúdo estabilizar.
  * Com fixed, só fundo e sombra mudam quando .is-scrolled é aplicado.
+ *
+ * Temas podem desligar o fixed em breakpoints mobile com CSS próprio carregado
+ * depois deste handle (ex. iawp ≤799px → position:relative + pad-top:0).
+ * Não há breakpoint embutido aqui — decisão de produto.
  */
 .site-header.header--overlay,
 header.site-header.header--overlay {
