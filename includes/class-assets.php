@@ -76,7 +76,10 @@ final class Assets {
 			BHB_PLUGIN_URL . 'assets/js/frontend.js',
 			array(),
 			$version,
-			true
+			array(
+				'in_footer' => true,
+				'strategy'  => 'defer',
+			)
 		);
 	}
 
